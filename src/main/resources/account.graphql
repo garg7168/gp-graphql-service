@@ -1,0 +1,86 @@
+schema {
+ query: Query
+ mutation: Mutation
+}
+
+type Query {
+ allAccounts(skip: Int = 0, first: Int =10 ): [Account]
+ account(acctId: String): [Account]
+}
+
+type Mutation {
+	createAccount(acctName: String!, amount: Float, accountType: String!, status: String, bankDetails: BankDetailsInput!, contacts: ContactsInput!, addressDetails: AddressDetailsInput!, audit: AuditInput):[Account]
+	updateAccount(acctId: String!, acctName: String!, amount: Float, accountType: String!, status: String, bankDetails: BankDetailsInput!, contacts: ContactsInput!, addressDetails: AddressDetailsInput!, audit: AuditInput):[Account]
+	deleteAccount(acctId: String!): [Account]
+}
+
+type Account {
+  id: String
+  acctId: String
+  acctName: String
+  bankDetails: BankDetails
+  contacts: Contacts
+  addressDetails: Address
+  amount: Float
+  accountType: String
+  status: String
+  audit: Audit
+ }
+
+type BankDetails {
+  bankId: Int
+  bankName: String
+  ifsc: String
+  branchCode: String
+ }
+ 
+ type Contacts{
+  contactNumber: String!
+  email: String
+ }
+ 
+ type Address{
+  addressLine1: String
+  addressLine2: String
+  city: String
+  state: String
+  country: String
+  zip: Int
+  landmark: String
+ } 
+ 
+type Audit {
+  createdBy: String
+  createdDate: String
+  modifiedBy: String
+  modifiedDate: String
+}
+
+input BankDetailsInput {
+  bankId: Int!
+  bankName: String!
+  ifsc: String!
+  branchCode: String!
+ }
+ 
+ input ContactsInput{
+  contactNumber: String!
+  email: String
+ }
+ 
+ input AddressDetailsInput{
+  addressLine1: String!
+  addressLine2: String
+  city: String
+  state: String
+  country: String
+  zip: Int
+  landmark: String
+ } 
+
+ input AuditInput {
+  createdBy: String
+  createdDate: String
+  modifiedBy: String
+  modifiedDate: String
+}
