@@ -9,6 +9,8 @@ Secondary links :
 https://graphql.org/ 
 https://dimitr.im/graphql-mutations-spring 
 
+postman url with post type:
+http://localhost:8080/argentina/gpservice
 
 http://localhost:9090/swagger-ui.html
 
