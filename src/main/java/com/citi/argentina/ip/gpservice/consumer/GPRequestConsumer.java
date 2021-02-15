@@ -25,7 +25,7 @@ import graphql.ExecutionResult;
 @Component
 public class GPRequestConsumer {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(GPRequestConsumer.class);
+	/*private static final Logger LOGGER = LoggerFactory.getLogger(GPRequestConsumer.class);
 	@Autowired
 	private GraphQlUtility graphQlUtility;
 	@Autowired
@@ -59,5 +59,5 @@ public class GPRequestConsumer {
 			e.printStackTrace();
 		}
 		return null;
-	}
+	}*/
 }
